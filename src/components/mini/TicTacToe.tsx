@@ -4,7 +4,7 @@ function TicTacToe() {
   const [history, setHistory] = useState<(string | null)[][]>([
     Array(9).fill(null),
   ]);
-  //   console.log("this")
+
   const [isX, setX] = useState(false);
   const [winner, setWinner] = useState<string>("");
   const currentStat = history[history.length - 1];
