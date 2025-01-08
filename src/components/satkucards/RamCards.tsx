@@ -1,12 +1,29 @@
+"use client";
+import { motion } from "framer-motion";
+import { RefObject } from "react";
 type PropsType = {
   name: string;
   description: string;
   size: string;
   isAvailable: boolean;
+  reference: RefObject<HTMLDivElement | null>;
 };
-function RamCards({ name, description, size, isAvailable }: PropsType) {
+function RamCards({
+  name,
+  description,
+  size,
+  isAvailable,
+  reference,
+}: PropsType) {
   return (
-    <div className="h-[250px] w-[200px] rounded-[2.5rem] flex flex-col overflow-hidden bg-black items-center ">
+    <motion.div
+      drag
+      dragConstraints={reference}
+      whileDrag={{ scale: 1.2 }}
+      dragElastic={0.1}
+      dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
+      className="h-[250px] w-[200px] rounded-[2.5rem] flex flex-col overflow-hidden bg-black items-center "
+    >
       <div className="flex-1 p-2 mt-2">
         <h3 className="text-left text-md text-amber-700 font-medium">{name}</h3>
         <p className="mt-4 text-sm"> {description}</p>
@@ -22,7 +39,7 @@ function RamCards({ name, description, size, isAvailable }: PropsType) {
           <p>Out of stock</p>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
 export default RamCards;

@@ -1,3 +1,4 @@
+"use client";
 import Background from "@/components/satkucards/Background";
 import ForeFront from "@/components/satkucards/ForeFront";
 
