@@ -1,7 +1,7 @@
 "use client";
 
 import TicTacToe from "@/components/mini/TicTacToe";
-
+import PopoverDemo from "@/components/testComponent/PopoverDemo";
 function Page() {
   const componentArr = [
     {
