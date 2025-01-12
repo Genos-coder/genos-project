@@ -1,5 +1,7 @@
 "use client";
 
+import ImageSlider from "@/components/mini/ImageSlider";
+import StickyCursor from "@/components/mini/StickyCursor";
 import TicTacToe from "@/components/mini/TicTacToe";
 import PopoverDemo from "@/components/testComponent/PopoverDemo";
 function Page() {
@@ -7,6 +9,14 @@ function Page() {
     {
       name: "TicTacToe",
       component: <TicTacToe />,
+    },
+    {
+      name: "StickyCursor",
+      component: <StickyCursor />,
+    },
+    {
+      name: "Image Slider",
+      component: <ImageSlider />,
     },
   ];
   return (
