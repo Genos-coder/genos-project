@@ -1,7 +1,6 @@
-"use client";
 import { useRef } from "react";
 
-function ImageSlider() {
+function RefinedSlider() {
   const catList = setUpCatList();
   const ref = useRef<Map<string, HTMLElement> | null>(new Map());
   const getMap = () => {
@@ -49,13 +48,11 @@ function ImageSlider() {
                 className="w-full h-full"
                 key={`${cat}aa1`}
                 ref={(node) => {
-                  if (node) {
-                    const map = getMap();
-                    map?.set(cat, node);
-                  } else {
-                    const map = getMap();
+                  const map = getMap();
+                  map?.set(cat, node!);
+                  return () => {
                     map?.delete(cat);
-                  }
+                  };
                 }}
               >
                 <img className="w-full h-full object-cover" src={cat} alt="" />
@@ -67,7 +64,7 @@ function ImageSlider() {
     </div>
   );
 }
-export default ImageSlider;
+export default RefinedSlider;
 
 function setUpCatList() {
   const catList = [];
